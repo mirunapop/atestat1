@@ -5,6 +5,11 @@ import { Loading } from './LoadingComponent';
 import { baseUrl } from '../shared/baseUrl';
 import { Stagger, Fade, FadeTransform } from 'react-animation-components';
 
+const imgStyle={
+    maxHeight: 128,
+    maxWidth:128
+}
+
 function RenderLeader({leaders, isLoading, errMess}) {
     if(isLoading) {
         return(
@@ -28,7 +33,7 @@ function RenderLeader({leaders, isLoading, errMess}) {
                     }} >
                         <Media tag ="li" key={leader.id}>
                             <Media left middle>
-                                <Media object src={baseUrl + leader.image} alt={leader.name} />
+                                <Media object src={baseUrl + leader.image} alt={leader.name} style={imgStyle}/>
                             </Media>
                 
                             <Media body className="ml-5">
